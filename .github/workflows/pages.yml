@@ -23,10 +23,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Requires Pages to already be on, with Settings -> Pages -> Source
+      # set to "GitHub Actions". The workflow token is not permitted to turn
+      # Pages on for the first time, so that step is done once by hand.
       - name: Configure Pages
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - name: Assemble site
         run: |
